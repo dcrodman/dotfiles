@@ -1,0 +1,15 @@
+[
+    {
+        "clean" : ["~"],
+    },
+    {
+        "link" : {
+            "~/.gitignore": "gitignore"
+        }
+    },
+    {
+        "shell" : [
+            []
+        ]
+    }
+]
