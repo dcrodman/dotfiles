@@ -3,7 +3,7 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
-source ~/.zsh/antigen/antigen.zsh
+source ~/.antigen_lnk/antigen.zsh
 
 for f in ~/.zsh/*.zsh; do
 	source $f

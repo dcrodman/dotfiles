@@ -7,7 +7,7 @@
             "~/.gitignore": "gitignore",
             "~/.gitconfig" : "gitconfig",
             "~/.zsh" : "zsh",
-            "~/.zsh/antigen" : "antigen",
+            "~/.antigen_lnk" : "antigen",
             "~/.zshrc" : "zshrc"
         }
     },
