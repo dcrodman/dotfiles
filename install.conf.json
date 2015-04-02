@@ -5,6 +5,7 @@
     {
         "link" : {
             "~/.gitignore": "gitignore",
+            "~/.gitconfig" : "gitconfig",
             "~/.zshrc" : "zshrc"
         }
     },

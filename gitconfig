@@ -1,0 +1,20 @@
+[color]
+	ui = auto
+[merge]
+	conflictstyle = diff3
+[alias]
+	br = branch -v
+	staged = diff --cached
+	ch = checkout
+	fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
+	change = diff --cached
+	st = status
+	rb = rebase
+[interactive]
+	singlekey = true
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore
+[include]
+	path = ~/.gitconfig_local
