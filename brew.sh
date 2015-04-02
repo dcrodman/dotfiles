@@ -14,6 +14,7 @@ brew install go
 brew install wget
 brew install vim
 brew install zsh
+brew install mysql
 
 brew install caskroom/cask/brew-cask
 brew cask install google-chrome
