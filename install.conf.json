@@ -4,13 +4,15 @@
     },
     {
         "link" : {
-            "~/.gitignore": "gitignore"
+            "~/.gitignore": "gitignore",
+            "~/.zshrc" : "zshrc"
         }
     },
     {
         "shell" : [
             ["xcode-select --install"],
-            ["./brew.sh"]
+            ["./brew.sh"],
+            ["./osx.sh"]
         ]
     }
 ]

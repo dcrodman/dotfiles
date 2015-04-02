@@ -10,12 +10,15 @@ brew upgrade
 
 brew install python
 brew install ruby
+brew install go
 brew install wget
 brew install vim
 brew install zsh
 
 brew install caskroom/cask/brew-cask
 brew cask install google-chrome
+brew cask install sublime-text3
+brew cask install iterm2
 brew cask install dropbox
 brew cask install spotify
 brew cask install steam
