@@ -21,3 +21,8 @@ antigen theme risto
 
 antigen apply
 
+# Source a local zshrc if it exists.
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
+
