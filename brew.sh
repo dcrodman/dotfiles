@@ -12,6 +12,7 @@ brew install python
 brew install ruby
 brew install wget
 brew install vim
+brew install zsh
 
 brew install caskroom/cask/brew-cask
 brew cask install google-chrome
