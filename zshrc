@@ -5,6 +5,6 @@ export CLICOLOR=1
 
 source antigen/antigen.zsh
 
-for f in ~/.zsh.d/*.zsh; do
+for f in zsh/*.zsh; do
   source $f
 done
