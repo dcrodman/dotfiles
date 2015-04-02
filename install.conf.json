@@ -9,10 +9,6 @@
         }
     },
     {
-        "shell" : [
-            ["xcode-select --install"],
-            ["./brew.sh"],
-            ["./osx.sh"]
-        ]
+        "shell" : []
     }
 ]
