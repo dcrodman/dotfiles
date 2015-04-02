@@ -21,7 +21,6 @@ brew cask install sublime-text3
 brew cask install iterm2
 brew cask install dropbox
 brew cask install spotify
-brew cask install steam
 
 # Remove outdated versions from the Cellar
 brew cleanup
