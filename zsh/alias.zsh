@@ -1,0 +1,1 @@
+alias setgo='export GOPATH="$(pwd)"'
