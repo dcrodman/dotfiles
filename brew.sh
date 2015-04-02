@@ -17,6 +17,7 @@ brew install zsh
 brew install mysql
 
 brew install caskroom/cask/brew-cask
+brew install Caskroom/cask/xquartz
 brew cask install google-chrome
 brew cask install sublime-text3
 brew cask install iterm2
