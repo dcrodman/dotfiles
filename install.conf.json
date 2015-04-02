@@ -6,6 +6,8 @@
         "link" : {
             "~/.gitignore": "gitignore",
             "~/.gitconfig" : "gitconfig",
+            "~/.zsh" : "zsh",
+            "~/.zsh/antigen" : "antigen",
             "~/.zshrc" : "zshrc"
         }
     },

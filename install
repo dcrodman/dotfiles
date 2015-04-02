@@ -2,6 +2,13 @@
 
 set -e
 
+# if ["$1" -eq "--all"]; then
+# 	echo "Running all shell install scripts..."
+# 	for f in ls *.sh; do
+# 		exec $f
+# 	fi
+# fi
+
 CONFIG="install.conf.json"
 DOTBOT_DIR="dotbot"
 
