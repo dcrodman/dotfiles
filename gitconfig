@@ -10,6 +10,8 @@
 	change = diff --cached
 	st = status
 	rb = rebase
+	supdate = submodule update --remote --merge
+	spush = push --recurse-submodules=on-demand
 [interactive]
 	singlekey = true
 [push]
