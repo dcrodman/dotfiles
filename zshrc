@@ -18,6 +18,7 @@ antigen bundle sublime
 #antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme risto
+#antigen theme gentoo
 
 antigen apply
 
