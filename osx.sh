@@ -26,7 +26,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
