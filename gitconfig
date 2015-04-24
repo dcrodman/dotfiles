@@ -20,3 +20,5 @@
 	excludesfile = ~/.gitignore
 [include]
 	path = ~/.gitconfig_local
+[mergetool]
+	keepBackup = false
