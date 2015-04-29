@@ -18,6 +18,7 @@
 	default = simple
 [core]
 	excludesfile = ~/.gitignore
+	ignorecase = false
 [include]
 	path = ~/.gitconfig_local
 [mergetool]
