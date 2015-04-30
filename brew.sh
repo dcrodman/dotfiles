@@ -15,6 +15,7 @@ brew install wget
 brew install vim
 brew install zsh
 brew install mysql
+brew install ack
 
 brew install caskroom/cask/brew-cask
 brew install Caskroom/cask/xquartz
