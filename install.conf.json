@@ -5,11 +5,10 @@
     {
         "link" : {
             "~/.dotfiles" : "",
-            "~/.gitignore": "gitignore",
-            "~/.gitconfig" : "gitconfig",
-            "~/.zsh" : "zsh",
+            "~/.zshrc" : "zshrc",
             "~/.antigen_lnk" : "antigen",
-            "~/.zshrc" : "zshrc"
+            "~/.gitignore": "gitignore",
+            "~/.gitconfig" : "gitconfig"
         }
     },
     {

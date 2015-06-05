@@ -3,7 +3,7 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
-for f in ~/.zsh/*.zsh; do
+for f in ~/.dotfiles/zsh/*.zsh; do
     source $f
 done
 
