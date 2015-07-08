@@ -15,10 +15,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle brew
 antigen bundle sublime
-#antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme risto
-#antigen theme gentoo
 
 antigen apply
 
