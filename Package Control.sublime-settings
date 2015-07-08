@@ -1,0 +1,32 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"C Improved",
+		"C++ Starting Kit",
+		"C++11",
+		"CMake",
+		"Colorsublime",
+		"Go To Definition",
+		"GoSublime",
+		"ImprovedSQL",
+		"Javatar",
+		"LESS",
+		"Numix Theme",
+		"Package Control",
+		"Prolog",
+		"Python Breakpoints",
+		"Python Fix Imports",
+		"Python Improved",
+		"SideBarEnhancements",
+		"SideBarFolders",
+		"SqlBeautifier",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scalac",
+		"SublimeLinter-contrib-scalastyle"
+	]
+}
