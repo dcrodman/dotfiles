@@ -10,10 +10,14 @@
 		"C++11",
 		"CMake",
 		"Colorsublime",
+		"DocBlockr",
 		"Go To Definition",
 		"GoSublime",
 		"ImprovedSQL",
+		"Java Velocity",
+		"JavaScript Completions",
 		"Javatar",
+		"Jinja2",
 		"LESS",
 		"Numix Theme",
 		"Package Control",
@@ -21,12 +25,15 @@
 		"Python Breakpoints",
 		"Python Fix Imports",
 		"Python Improved",
+		"Ruby Debugger",
 		"SideBarEnhancements",
 		"SideBarFolders",
 		"SqlBeautifier",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-contrib-scalac",
-		"SublimeLinter-contrib-scalastyle"
+		"SublimeLinter-contrib-scalastyle",
+		"Terminal",
+		"Trimmer"
 	]
 }

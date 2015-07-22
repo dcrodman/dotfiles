@@ -1,5 +1,25 @@
 {
 	"color_scheme": "Packages/Colorsublime - Themes/KoralGreen.tmTheme",
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.pub",
+		"*.DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
+	],
 	"font_face": "Monaco",
 	"font_size": 11,
 	"ignored_packages":
