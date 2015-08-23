@@ -19,6 +19,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
+	editor = vim
 [include]
 	path = ~/.gitconfig_local
 [mergetool]
