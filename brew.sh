@@ -8,14 +8,11 @@ fi
 brew update
 brew upgrade
 
-brew install python
-brew install ruby
-brew install go
-brew install wget
-brew install vim
-brew install zsh
+brew install zsh git
+brew install python ruby go
+brew install wget httpie
+brew install vim ack
 brew install mysql
-brew install ack
 
 brew install caskroom/cask/brew-cask
 brew install Caskroom/cask/xquartz
