@@ -11,7 +11,7 @@ brew upgrade
 brew install zsh git
 brew install python ruby go
 brew install wget httpie
-brew install vim ack
+brew install vim ack icdiff
 brew install mysql
 
 brew install caskroom/cask/brew-cask
