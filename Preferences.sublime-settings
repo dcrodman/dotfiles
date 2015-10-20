@@ -14,8 +14,10 @@
 		"*.dylib",
 		"*.ncb",
 		"*.sdf",
-		"*.pub",
-		"*.DS_Store",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
 		"*.class",
 		"*.psd",
 		"*.db"
@@ -24,6 +26,7 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
+		"Python",
 		"Vintage"
 	]
 }
