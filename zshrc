@@ -15,6 +15,10 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle brew
 antigen bundle sublime
+antigen bundle python
+antigen bundle ruby
+antigen bundle encode64
+antigen bundle httpie
 
 antigen theme risto
 

@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -19,12 +20,12 @@
 		"Javatar",
 		"Jinja2",
 		"LESS",
+		"MagicPython",
 		"Numix Theme",
 		"Package Control",
 		"Prolog",
 		"Python Breakpoints",
 		"Python Fix Imports",
-		"Python Improved",
 		"Ruby Debugger",
 		"SideBarEnhancements",
 		"SideBarFolders",
