@@ -21,6 +21,7 @@ antigen bundle encode64
 antigen bundle httpie
 
 antigen theme risto
+#antigen theme gianu
 
 antigen apply
 
