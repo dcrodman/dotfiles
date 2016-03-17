@@ -7,7 +7,7 @@
 	staged = diff --cached
 	ch = checkout
 	fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
-	change = diff --cached
+	changed = diff --cached
 	st = status
 	rb = rebase
 	supdate = submodule update --remote --merge
