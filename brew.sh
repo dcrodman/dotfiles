@@ -8,8 +8,8 @@ fi
 brew update
 brew upgrade
 
-brew install zsh git
-brew install python ruby go
+brew install zsh git bash-completion
+brew install python3 ruby go
 brew install wget httpie
 brew install vim ack icdiff
 brew install mysql
