@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: .
+    ~/.zshrc: home/zshrc
+    ~/.vimrc: home/vimrc
+    ~/.vim: vim
+    ~/.antigen_lnk: antigen
+    ~/.gitignore: home/gitignore
+    ~/.gitconfig: home/gitconfig

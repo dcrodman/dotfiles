@@ -1,7 +1,9 @@
 [color]
 	ui = auto
+
 [merge]
 	conflictstyle = diff3
+
 [alias]
 	br = branch -v
 	staged = diff --cached
@@ -12,15 +14,20 @@
 	rb = rebase
 	supdate = submodule update --remote --merge
 	spush = push --recurse-submodules=on-demand
+
 [interactive]
 	singlekey = true
+
 [push]
 	default = simple
+
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
 	editor = vim
+
 [include]
 	path = ~/.gitconfig_local
+
 [mergetool]
 	keepBackup = false
