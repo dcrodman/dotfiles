@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/KoralGreen.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Chromodynamics (SL).tmTheme",
 	"file_exclude_patterns":
 	[
 		"*.pyc",
