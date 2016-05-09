@@ -8,10 +8,17 @@ fi
 brew update
 brew upgrade
 
-brew install zsh git bash-completion
-brew install python3 ruby go
-brew install wget httpie
-brew install vim ack icdiff
+brew install zsh 
+brew install git
+brew install bash-completion
+brew install python3
+brew install ruby
+brew install go
+brew install wget
+brew install httpie
+brew install vim
+brew install ack
+brew install icdiff
 brew install mysql
 
 brew install caskroom/cask/brew-cask
@@ -19,9 +26,6 @@ brew install Caskroom/cask/xquartz
 brew cask install google-chrome
 brew cask install sublime-text3
 brew cask install iterm2
-brew cask install dropbox
-brew cask install spotify
-brew cask install vlc
 
 # Remove outdated versions from the Cellar
 brew cleanup
