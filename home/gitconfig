@@ -6,14 +6,14 @@
 
 [alias]
 	br = branch -v
-	staged = diff --cached
 	ch = checkout
-	fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
-	changed = diff --cached
 	st = status
 	rb = rebase
+	rbc = rebase --continue
+	staged = diff --cached
 	supdate = submodule update --remote --merge
 	spush = push --recurse-submodules=on-demand
+	fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
 
 [interactive]
 	singlekey = true
