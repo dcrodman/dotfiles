@@ -31,3 +31,5 @@
 
 [mergetool]
 	keepBackup = false
+[pull]
+	rebase = true
