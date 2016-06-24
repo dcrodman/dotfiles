@@ -11,8 +11,8 @@
 	rb = rebase
 	rbc = rebase --continue
 	staged = diff --cached
-	supdate = submodule update --remote --merge
 	spush = push --recurse-submodules=on-demand
+	supd = submodule update --remote --merge
 	fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
 
 [interactive]
