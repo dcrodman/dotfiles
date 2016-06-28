@@ -26,6 +26,7 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
+		"JavaScript",
 		"Python",
 		"Vintage"
 	]
