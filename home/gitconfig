@@ -19,7 +19,7 @@
 	singlekey = true
 
 [push]
-	default = simple
+	default = current
 
 [core]
 	excludesfile = ~/.gitignore
