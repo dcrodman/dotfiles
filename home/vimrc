@@ -17,6 +17,7 @@ Plugin 'wellsjo/wellsokai.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,3 +46,13 @@ set hidden
 " Set one of the color schemes from above
 colorscheme wellsokai
 
+" Map NERDTree to Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+
+" Start up NERDTree if vim was opened without a specified file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Bind CtrlP to <c-p>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
