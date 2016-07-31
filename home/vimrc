@@ -1,5 +1,23 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+filetype off
+
+" ================ General Config ================
+
+set number 		" line numbers
+set ignorecase	" case-insensitive searching
+set smartcase   " ...unless we type a capital
+
+" syntax highlighting
+syntax on
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" ================ Vundle Initialization ================
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,10 +30,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-syntax on
-set ignorecase
-set nu
