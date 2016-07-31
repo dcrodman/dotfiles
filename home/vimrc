@@ -3,6 +3,32 @@
 set nocompatible
 filetype off
 
+" ================ Vundle Initialization ================
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/vundles')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'w0ng/vim-hybrid'
+
+" Color schemes
+Plugin 'wellsjo/wellsokai.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
 " ================ General Config ================
 
 set number 		" line numbers
@@ -17,23 +43,6 @@ syntax on
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-" ================ Vundle Initialization ================
+" Set one of the color schemes from above
+colorscheme wellsokai
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/vundles')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-
-" ================ Turn Off Swap Files ==============
-
-set noswapfile
-set nobackup
-set nowb
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
