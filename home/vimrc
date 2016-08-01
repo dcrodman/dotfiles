@@ -15,10 +15,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Color schemes
 Plugin 'wellsjo/wellsokai.vim'
 
+" Navigation and general editing improvements
 Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
+
+" Language-specific plugins
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,3 +61,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Bind CtrlP to <c-p>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
