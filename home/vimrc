@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'vim-airline/vim-airline'
 
 " Language-specific plugins
 Plugin 'fatih/vim-go'
