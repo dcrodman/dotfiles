@@ -3,6 +3,7 @@
 
 [merge]
 	conflictstyle = diff3
+	tool = opendiff
 
 [alias]
 	br = branch -v
