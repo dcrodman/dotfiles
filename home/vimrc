@@ -19,8 +19,10 @@ Plugin 'wellsjo/wellsokai.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Language-specific plugins
 Plugin 'fatih/vim-go'
@@ -62,4 +64,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Bind CtrlP to <c-p>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" Have CtrlP start its search based on the directory of the current open file
+let g:ctrlp_working_path_mode = 'a'
+
+" Airline theme
+let g:airline_theme='luna'
 
