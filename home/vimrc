@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 
-" General editing improvements 
+" General editing improvements
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'AndrewRadev/splitjoin.vim'
 
@@ -60,12 +60,19 @@ set autowrite
 " Set one of the color schemes from above
 colorscheme wellsokai
 
+" Use spaces as indents when entered with tab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" Remove whitespace from end of lines
+nnoremap <leader>w :%s/\s\+$//<CR>
+
+" ================ Plugin Config ================
+
 " Airline theme
 let g:airline_theme='luna'
 
 " Map NERDTree to Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
-
 " Start up NERDTree if vim was opened without a specified file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -80,9 +87,18 @@ let g:ctrlp_working_path_mode = 'a'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+let g:go_list_type = "quickfix"
 
-nnoremap <leader>gb :GoBuild<CR>
-nnoremap <leader>gi :GoInstall<CR>
-map <C-k> :cnext<CR>
-map <C-l> :cprevious<CR>
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+map <C-j> :cnext<CR>
+map <C-k> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+
+" NERDCommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
