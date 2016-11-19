@@ -91,6 +91,7 @@ let g:go_list_type = "quickfix"
 
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>i  <Plug>(go-install)
 map <C-j> :cnext<CR>
 map <C-k> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
