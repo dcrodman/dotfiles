@@ -74,8 +74,8 @@ let g:airline_theme='luna'
 " Map NERDTree to Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 " Start up NERDTree if vim was opened without a specified file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Bind CtrlP to <c-p>
 let g:ctrlp_map = '<c-p>'
@@ -103,3 +103,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+" Format JSON inline
+com FmtJSON execute "%!python -m json.tool"
