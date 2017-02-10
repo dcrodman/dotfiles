@@ -8,6 +8,7 @@
 [alias]
 	br = branch -v
 	ch = checkout
+        cp = cherry-pick
 	st = status
 	rb = rebase
 	rbc = rebase --continue
