@@ -9,6 +9,7 @@
     br = branch -v
     ch = checkout
     cp = cherry-pick
+    cam = commit --amend
     st = status
     rb = rebase
     rbc = rebase --continue

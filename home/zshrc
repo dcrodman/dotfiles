@@ -20,8 +20,9 @@ antigen bundle ruby
 antigen bundle encode64
 antigen bundle httpie
 
-antigen theme risto
-#antigen theme gianu
+# antigen bundle yous/lime
+# antigen theme gianu
+antigen theme geoffgarside
 
 antigen apply
 
