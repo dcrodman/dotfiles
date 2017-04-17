@@ -8,6 +8,7 @@
     ~/.dotfiles: .
     ~/.zshrc: home/zshrc
     ~/.vimrc: home/vimrc
+    ~/.spacemacs: home/spacemacs
     ~/.vim: vim
     ~/.antigen_lnk: antigen
     ~/.gitignore: home/gitignore
