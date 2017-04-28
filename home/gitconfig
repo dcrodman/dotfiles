@@ -14,6 +14,7 @@
     rb = rebase
     rbc = rebase --continue
     rbi = rebase --interactive
+    m = merge
     topstash = show stash@{0}
     staged = diff --cached
     fw = !git commit -qam 'fix whitespace' && git rebase -q --whitespace=fix HEAD~ && git reset -q HEAD~
