@@ -20,6 +20,7 @@ brew install vim
 brew install ack
 brew install icdiff
 brew install mysql
+brew install aspell
 
 brew install caskroom/cask/brew-cask
 brew install Caskroom/cask/xquartz
