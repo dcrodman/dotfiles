@@ -3,13 +3,9 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
-for f in ~/.dotfiles/zsh/*.zsh; do
-    source $f
-done
-
+#### Antigen Stuff ####
 source ~/.antigen_lnk/antigen.zsh
 
-# Antigen Stuff
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -25,6 +21,18 @@ antigen bundle httpie
 antigen theme geoffgarside
 
 antigen apply
+
+#### Aliases ####
+alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
+alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
+
+alias startmysql='mysql.server start'
+alias em='env SHELL=/usr/local/bin/zsh emacs'
+
+# Source everything from the zsh folder
+# for f in ~/.dotfiles/zsh/*.zsh; do
+#     source $f
+# done
 
 # Source a local zshrc if it exists.
 if [ -f ~/.zshrc_local ]; then
