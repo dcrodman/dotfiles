@@ -38,11 +38,13 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
-     ;; better-defaults
+     (auto-completion :variables
+                      auto-completion-return-key-behavior `complete
+                      auto-completion-tab-key-behavior `cycle)
+     better-defaults
      emacs-lisp
      ;; git
-     ;; markdown
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -319,6 +321,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (global-linum-mode) ; Show line numbers by default
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
