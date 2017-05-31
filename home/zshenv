@@ -1,0 +1,7 @@
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
+
+# Source a local .zshenv if it exists.
+if [ -f ~/.zshenv_local ]; then
+    source ~/.zshenv_local
+fi
