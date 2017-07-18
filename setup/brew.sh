@@ -11,7 +11,7 @@ brew upgrade
 brew install zsh 
 brew install git
 brew install bash-completion
-brew install python3
+brew install pyenv
 brew install ruby
 brew install go
 brew install wget
