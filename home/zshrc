@@ -29,6 +29,10 @@ alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Fin
 alias startmysql='mysql.server start'
 alias em='env SHELL=/usr/local/bin/zsh emacs'
 
+# Path definitions are here so that OSX's path_helper doesn't ruin things
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
+
 # Source everything from the zsh folder
 # for f in ~/.dotfiles/zsh/*.zsh; do
 #     source $f
@@ -38,4 +42,7 @@ alias em='env SHELL=/usr/local/bin/zsh emacs'
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+# Set up Pyenv
+eval "$(pyenv init -)"
 
