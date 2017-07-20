@@ -21,6 +21,7 @@ brew install ack
 brew install icdiff
 brew install mysql
 brew install aspell
+brew install tmux
 
 brew install caskroom/cask/brew-cask
 brew install Caskroom/cask/xquartz
@@ -33,3 +34,7 @@ brew cleanup
 
 # Link .app files into /Applications
 brew linkapps
+
+echo "Note: Some things require manual installtion:"
+echo "Postgres.app (http://postgresapp.com/)"
+echo "Spacemacs (https://github.com/syl20bnr/spacemacs#install)"
