@@ -10,7 +10,9 @@
     ~/.zshenv: home/zshenv
     ~/.vimrc: home/vimrc
     ~/.spacemacs: home/spacemacs
-    ~/.vim: vim
-    ~/.antigen_lnk: antigen
     ~/.gitignore: home/gitignore
     ~/.gitconfig: home/gitconfig
+    ~/.tmux.conf: home/tmux.conf
+    ~/.tmux: tmux
+    ~/.vim: vim
+    ~/.antigen_lnk: antigen
