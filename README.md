@@ -1,3 +1,11 @@
+What Is This?
+============
+
+This repository contains the bulk of my dotfiles configuration, which can be paired
+with a customized per-environment repository if you provide your own local versions.
+There's nothing crazy here, mostly just configs for OS X defaults, zsh, git, tmux,
+and vim/spacemacs.
+
 Installation
 ============
 
