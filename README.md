@@ -13,6 +13,7 @@ Installation
     git clone --recursive git@github.com:dcrodman/dotfiles.git
     cd dotfiles
     ./install
+    chsh -s /usr/local/bin/zsh # or /usr/bin/zsh
 
 This will clone the repository and set you up with all of the necessary symlinks.
 There are some other things you'll need to do in order to get this fully functional:
