@@ -1,2 +1,5 @@
 vim/.netrwhist
 vim/vundles
+tmux/resurrect/
+tmux/plugins/**
+tmux/plugins/!tpm/!
