@@ -20,3 +20,4 @@ There are some other things you'll need to do in order to get this fully functio
 * Open vim and run :PluginInstall
 * Open tmux and run Ctrl+b + I
 * Copy SublimeText config files into place if you want those
+* Install pyenv (this is taken care of by brew.sh for macOS)
