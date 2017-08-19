@@ -26,7 +26,6 @@ antigen apply
 alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 
-alias startmysql='mysql.server start'
 alias em='env SHELL=/usr/local/bin/zsh emacs'
 
 # Path definitions are here so that OSX's path_helper doesn't ruin things

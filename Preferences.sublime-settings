@@ -26,8 +26,10 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
+		"BracketHighlighter",
 		"JavaScript",
 		"Python",
+		"SideBarEnhancements",
 		"Vintage"
 	]
 }
