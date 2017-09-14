@@ -27,6 +27,8 @@ alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Fi
 alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 
 alias em='env SHELL=/usr/local/bin/zsh emacs'
+alias tn='tmux new'
+alias ta='tmux attach #'
 
 # Path definitions are here so that OSX's path_helper doesn't ruin things
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
