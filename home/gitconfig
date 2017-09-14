@@ -31,12 +31,13 @@
 [core]
     excludesfile = ~/.gitignore
     ignorecase = false
-    editor = vim
+    editor = /usr/local/bin/vim
 
 [include]
     path = ~/.gitconfig_local
 
 [mergetool]
     keepBackup = false
+
 [pull]
     rebase = true
