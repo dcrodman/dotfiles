@@ -23,6 +23,9 @@ brew install mysql
 brew install aspell
 brew install tmux
 
+# Needed for tmux config.
+brew install reattach-to-user-namespace
+
 brew install caskroom/cask/brew-cask
 brew install Caskroom/cask/xquartz
 brew cask install google-chrome
