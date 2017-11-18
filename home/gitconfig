@@ -21,6 +21,7 @@
     graph = log --graph
     spush = push --recurse-submodules=on-demand
     supd = submodule update --remote --merge
+    c = commit
 
 [interactive]
     singlekey = true
