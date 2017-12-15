@@ -30,3 +30,8 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+# IDE Project files #
+#####################
+.idea/
+.vscode/
+
