@@ -33,6 +33,11 @@ alias ta='tmux attach #'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
 
+# Pass true to enable alternate characters or false to enable repeating keys.
+altcharacters() {
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool $1
+}
+
 # Path definitions are here so that OSX's path_helper doesn't ruin things
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
@@ -51,4 +56,3 @@ fi
 
 #### Set up Pyenv ####
 eval "$(pyenv init -)"
-
