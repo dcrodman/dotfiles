@@ -42,6 +42,12 @@ altcharacters() {
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
 
+if [[ `uname` == 'Darwin' ]]; then
+    if [ -e /Applications/Visual\ Studio\ Code.app ]; then
+        export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+    fi
+fi
+
 #### Load zsh scripts from zsh/ directory ####
 # Source everything from the zsh folder
 # for f in ~/.dotfiles/zsh/*.zsh; do
