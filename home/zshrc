@@ -1,13 +1,16 @@
+#### General Settings ####
 export HISTSIZE=99999
 export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
-#### Antigen Stuff ####
+################ Antigen ################
+
 source ~/.antigen_lnk/antigen.zsh
 
 antigen use oh-my-zsh
 
+# Plugins
 antigen bundle git
 antigen bundle brew
 antigen bundle sublime
@@ -16,13 +19,15 @@ antigen bundle ruby
 antigen bundle encode64
 antigen bundle httpie
 
+# Theme
 # antigen bundle yous/lime
 # antigen theme gianu
 antigen theme geoffgarside
 
 antigen apply
 
-#### Aliases ####
+################ Aliases ################
+
 alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 
@@ -33,32 +38,49 @@ alias ta='tmux attach #'
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
 
+############### Functions ###############
+
 # Pass true to enable alternate characters or false to enable repeating keys.
 altcharacters() {
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool $1
 }
 
-# Path definitions are here so that OSX's path_helper doesn't ruin things
+########## $PATH modifications ##########
+
+# Path definitions are here so that OSX's path_helper doesn't ruin things.
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
 
+# macOS only
 if [[ `uname` == 'Darwin' ]]; then
+	# Include VSCode binaries on path if we have it installed.
     if [ -e /Applications/Visual\ Studio\ Code.app ]; then
         export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
     fi
 fi
 
-#### Load zsh scripts from zsh/ directory ####
+############# Setup Scripts #############
+
+# Pyenv
+eval "$(pyenv init -)"
+
+# Asdf
+if [ -e /usr/local/opt/asdf ]; then
+	source /usr/local/opt/asdf/asdf.sh
+fi
+
+######## Load zsh scripts from zsh/ directory #######
+
 # Source everything from the zsh folder
 # for f in ~/.dotfiles/zsh/*.zsh; do
 #     source $f
 # done
 
-#### Load dotfiles_local zsh cfongis ####
+########## Load dotfiles_local zsh configs #########
+
 # Source a local zshrc if it exists.
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-#### Set up Pyenv ####
-eval "$(pyenv init -)"
+
