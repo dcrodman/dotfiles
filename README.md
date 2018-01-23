@@ -21,3 +21,15 @@ There are some other things you'll need to do in order to get this fully functio
 * Open vim and run :PluginInstall
 * Open tmux and run Ctrl+a + I
 * Install pyenv versions
+
+Misc
+============
+SublimeText packages:
+* Sidebar Enhancements
+* Color Sublime
+* Fix Mac Path
+* Terminal
+
+VSCode packages
+* vim bindings
+* vscode-workspace-switcher
