@@ -16,11 +16,10 @@ brew install aspell
 
 brew install git
 brew install vim
-brew install asdf
 
 brew install mysql
 brew install python pyenv
-brew install ruby
+brew install ruby rbenv
 brew install go delve
 
 # Remove outdated versions from the Cellar
