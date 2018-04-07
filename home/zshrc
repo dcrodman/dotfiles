@@ -62,11 +62,13 @@ fi
 ############# Setup Scripts #############
 
 # Pyenv
-eval "$(pyenv init -)"
+if [ `command -v pyenv` ]; then
+	eval "$(pyenv init -)"	
+fi
 
-# Asdf
-if [ -e /usr/local/opt/asdf ]; then
-	source /usr/local/opt/asdf/asdf.sh
+# Rbenv
+if [ `command -v rbenv` ]; then
+	eval "$(rbenv init -)"
 fi
 
 ######## Load zsh scripts from zsh/ directory #######
