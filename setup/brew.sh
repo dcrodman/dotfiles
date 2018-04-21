@@ -18,7 +18,7 @@ brew install git
 brew install vim
 
 brew install mysql
-brew install python pyenv
+brew install python pyenv pipenv
 brew install ruby rbenv
 brew install go delve
 
