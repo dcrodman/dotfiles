@@ -20,16 +20,4 @@ There are some other things you'll need to do in order to get this fully functio
 * Run one or more of the scripts in setup/. For OS X, use osx.sh and brew.sh
 * Open vim and run :PluginInstall
 * Open tmux and run Ctrl+a + I
-* Install pyenv/asdf versions
-
-Misc
-============
-SublimeText packages:
-* Sidebar Enhancements
-* Color Sublime
-* Fix Mac Path
-* Terminal
-
-VSCode packages
-* vim bindings
-* vscode-workspace-switcher
+* Install pyenv versions
