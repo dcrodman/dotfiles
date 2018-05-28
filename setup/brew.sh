@@ -22,5 +22,8 @@ brew install python pyenv pipenv
 brew install ruby rbenv
 brew install go delve
 
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+
 # Remove outdated versions from the Cellar
 brew cleanup

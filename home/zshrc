@@ -4,6 +4,30 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
+################ Powerlevel9k ################
+
+DISABLE_AUTO_TITLE='true'
+
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(pyenv rbenv status)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+# Disable dir/git icons
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+
+POWERLEVEL9K_VCS_GIT_ICON=''
+POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
+POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
+POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
+
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
 ################ Antigen ################
 
 source ~/.antigen_lnk/antigen.zsh
@@ -17,12 +41,14 @@ antigen bundle sublime
 antigen bundle python
 antigen bundle ruby
 antigen bundle encode64
+
 antigen bundle httpie
 
 # Theme
 # antigen bundle yous/lime
 # antigen theme gianu
-antigen theme geoffgarside
+# antigen theme geoffgarside
+antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
 
