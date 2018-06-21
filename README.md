@@ -37,3 +37,10 @@ Install pyenv versions
     pyenv install 3.6.5
 
 Configure iTerm2 to use Monaco Nerd Font (see Dropbox)
+
+Troubleshooting
+============
+
+If antigen bundles are misbehaving, try forcing a reinstall:
+
+    rm -rf ~/.antigen
