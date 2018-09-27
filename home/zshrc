@@ -59,9 +59,9 @@ alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Fin
 
 alias em='env SHELL=/usr/local/bin/zsh emacs'
 alias tn='tmux new'
-alias tnd='tmux new -s devel'
+alias tnd='tmux new -s dev'
 alias ta='tmux attach #'
-alias tad='tmux attach -t devel'
+alias tad='tmux attach -t dev'
 
 alias mysqlstart='mysql.server start'
 alias mysqlstop='mysql.server stop'
