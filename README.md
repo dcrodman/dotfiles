@@ -38,6 +38,8 @@ Install pyenv versions
 
 Configure iTerm2 to use Monaco Nerd Font (see Dropbox)
 
+Generate SSH keys (if applicable)
+
 Troubleshooting
 ============
 
