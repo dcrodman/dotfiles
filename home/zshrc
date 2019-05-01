@@ -41,14 +41,11 @@ antigen bundle sublime
 antigen bundle python
 antigen bundle ruby
 antigen bundle encode64
-
 antigen bundle httpie
 
 # Theme
-# antigen bundle yous/lime
-# antigen theme gianu
-# antigen theme geoffgarside
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme geoffgarside
+# antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
 
@@ -94,11 +91,6 @@ export GOPATH="$HOME/Development/godev"
 # Pyenv
 if [ `command -v pyenv` ]; then
 	eval "$(pyenv init -)"	
-fi
-
-# Rbenv
-if [ `command -v rbenv` ]; then
-	eval "$(rbenv init -)"
 fi
 
 ######## Load zsh scripts from zsh/ directory #######
