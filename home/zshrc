@@ -44,8 +44,9 @@ antigen bundle encode64
 antigen bundle httpie
 
 # Theme
-antigen theme geoffgarside
+# antigen theme geoffgarside
 # antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme af-magic
 
 antigen apply
 

@@ -33,12 +33,11 @@ Open vim and run
 
 Install pyenv versions
 
-    pyenv install 2.7.14
-    pyenv install 3.6.5
+    pyenv install 3.7.0
 
 Configure iTerm2 to use Monaco Nerd Font (see Dropbox)
 
-Generate SSH keys (if applicable)
+Generate or copy SSH keys
 
 Troubleshooting
 ============
