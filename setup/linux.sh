@@ -14,6 +14,4 @@ sudo apt-get install golang-1.10-go
 sudo apt-get install python3.7
 curl https://pyenv.run | bash
 
-sudo pip install httpie
-
 chsh -s /bin/zsh

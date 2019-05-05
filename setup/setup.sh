@@ -12,3 +12,13 @@ if [[ $unamestr == "Darwin" ]]; then
 else; then
 	bash $DIR/linux.sh
 fi
+
+### Python specific packages
+pyenv install 3.7.3
+pyenv global 3.7.3
+
+pip install --upgrade pip
+pip install --user pipx
+
+pipx install httpie
+pipx install poetry
