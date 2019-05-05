@@ -26,7 +26,6 @@ POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 
 # POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
 ################ Antigen ################
 
@@ -35,8 +34,8 @@ source ~/.antigen_lnk/antigen.zsh
 antigen use oh-my-zsh
 
 # Plugins
-antigen bundle git
 antigen bundle brew
+antigen bundle git
 antigen bundle sublime
 antigen bundle python
 antigen bundle ruby
@@ -52,8 +51,13 @@ antigen apply
 
 ################ Aliases ################
 
-alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
-alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
+if [[ `uname` == 'Darwin' ]]; then
+    alias mysqlstart='mysql.server start'
+    alias mysqlstop='mysql.server stop'
+
+    alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
+    alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
+fi
 
 alias em='env SHELL=/usr/local/bin/zsh emacs'
 alias tn='tmux new'
@@ -93,13 +97,6 @@ export GOPATH="$HOME/Development/godev"
 if [ `command -v pyenv` ]; then
 	eval "$(pyenv init -)"	
 fi
-
-######## Load zsh scripts from zsh/ directory #######
-
-# Source everything from the zsh folder
-# for f in ~/.dotfiles/zsh/*.zsh; do
-#     source $f
-# done
 
 ########## Load dotfiles_local zsh configs #########
 
