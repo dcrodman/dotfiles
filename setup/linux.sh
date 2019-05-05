@@ -11,9 +11,8 @@ sudo apt-get install postgresql
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get install golang-1.10-go
 
-sudo add-apt-repository ppa:jonathonf/python-3.6
-sudo apt-get install python3
-sudo pip install pipenv
+sudo apt-get install python3.7
+curl https://pyenv.run | bash
 
 sudo pip install httpie
 

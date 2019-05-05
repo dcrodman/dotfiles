@@ -11,14 +11,13 @@ brew install reattach-to-user-namespace
 
 brew install zsh bash-completion
 brew install httpie wget
-brew install icdiff
 brew install aspell
 
 brew install git
 brew install vim
 
 brew install mysql
-brew install python pyenv pipenv
+brew install python pyenv
 brew install ruby rbenv
 brew install go delve
 
