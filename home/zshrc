@@ -95,7 +95,7 @@ export GOPATH="$HOME/Development/godev"
 
 # Pyenv
 if [ `command -v pyenv` ]; then
-	eval "$(pyenv init -)"	
+    eval "$(pyenv init -)"
 fi
 
 ########## Load dotfiles_local zsh configs #########

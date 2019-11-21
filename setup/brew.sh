@@ -23,6 +23,7 @@ brew install go delve
 
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
+brew install starship
 
 # Remove outdated versions from the Cellar
 brew cleanup
