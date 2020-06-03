@@ -35,8 +35,6 @@ Install pyenv versions
 
     pyenv install 3.7.0
 
-Configure iTerm2 to use Monaco Nerd Font (see Dropbox)
-
 Generate or copy SSH keys
 
 Troubleshooting
