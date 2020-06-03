@@ -18,7 +18,4 @@ pyenv install 3.7.3
 pyenv global 3.7.3
 
 pip install --upgrade pip
-pip install --user pipx
-
-pipx install httpie
-pipx install poetry
+pip install --user poetry

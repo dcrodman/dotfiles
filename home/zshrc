@@ -59,11 +59,14 @@ if [[ `uname` == 'Darwin' ]]; then
     alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 fi
 
-alias em='env SHELL=/usr/local/bin/zsh emacs'
+# Tmux commands.
 alias tn='tmux new'
 alias tnd='tmux new -s dev'
 alias ta='tmux attach #'
 alias tad='tmux attach -t dev'
+
+# Redis.
+alias start-redis='redis-server /usr/local/etc/redis.conf'
 
 ############### Functions ###############
 
@@ -78,16 +81,24 @@ fi
 
 # Path definitions are here so that OSX's path_helper doesn't ruin things.
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+
 export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
-export PATH=~/.local/bin:${PATH}
 
 # macOS only
 if [[ `uname` == 'Darwin' ]]; then
 	# Include VSCode binaries on path if we have it installed.
     if [ -e /Applications/Visual\ Studio\ Code.app ]; then
-        export PATH=${PATH}:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+        export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:${PATH}
+    fi
+
+    # Include the Postgres binaries from the latest version of Postgres installed throug
+    # Postgres.app. Prevents some inconsistencies with the Homebrew-installed tools.
+    if [ -e /Applications/Postgres.app ]; then
+        export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:${PATH}
     fi
 fi
+
+######## Miscallaneous Env Vars #########
 
 export GOPATH="$HOME/Development/godev"
 
@@ -97,6 +108,11 @@ export GOPATH="$HOME/Development/godev"
 if [ `command -v pyenv` ]; then
     eval "$(pyenv init -)"
 fi
+
+# Nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ########## Load dotfiles_local zsh configs #########
 
