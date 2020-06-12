@@ -9,7 +9,6 @@
     ~/.zshrc: home/zshrc
     ~/.zshenv: home/zshenv
     ~/.vimrc: home/vimrc
-    ~/.spacemacs: home/spacemacs
     ~/.gitignore: home/gitignore
     ~/.gitconfig: home/gitconfig
     ~/.tmux.conf: home/tmux.conf

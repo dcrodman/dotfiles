@@ -5,6 +5,9 @@ if ! hash brew 2> /dev/null; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+
 brew install tmux
 # Needed for tmux config.
 brew install reattach-to-user-namespace
@@ -16,13 +19,8 @@ brew install aspell
 brew install git
 brew install vim
 
-brew install mysql
-brew install python pyenv
-brew install ruby rbenv
-brew install go delve
+brew install pyenv rbenv
 
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
 brew install starship
 
 # Remove outdated versions from the Cellar
