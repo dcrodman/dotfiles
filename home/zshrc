@@ -32,9 +32,6 @@ antigen apply
 if [[ `uname` == 'Darwin' ]]; then
     alias mysqlstart='mysql.server start'
     alias mysqlstop='mysql.server stop'
-
-    alias shidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
-    alias hhidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 fi
 
 # Tmux commands.
@@ -76,11 +73,6 @@ if [[ `uname` == 'Darwin' ]]; then
     fi
 fi
 
-# Rust
-if [[ -d $HOME/.cargo ]]; then
-    export PATH=$HOME/.cargo/env:$PATH
-fi
-
 ######## Miscallaneous Env Vars #########
 
 
@@ -90,6 +82,11 @@ fi
 # Pyenv
 if [ `command -v pyenv` ]; then
     eval "$(pyenv init -)"
+fi
+
+# Gvm
+if [ -d $HOME/.gvm ]; then
+    source $HOME/.gvm/scripts/gvm
 fi
 
 # Nvm
@@ -103,7 +100,6 @@ fi
 if [ `command -v starship` ]; then
     eval "$(starship init zsh)"	
 fi
-
 
 ########## Load dotfiles_local zsh configs #########
 

@@ -19,7 +19,7 @@ brew install aspell
 brew install git
 brew install vim
 
-brew install pyenv rbenv
+brew install pyenv
 
 brew install starship
 
