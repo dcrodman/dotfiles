@@ -12,6 +12,7 @@
     ~/.gitignore: home/gitignore
     ~/.gitconfig: home/gitconfig
     ~/.tmux.conf: home/tmux.conf
+    ~/.hushlogin: home/hushlogin
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.antigen_lnk: antigen
