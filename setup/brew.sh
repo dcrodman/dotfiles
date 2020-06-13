@@ -2,7 +2,7 @@
 
 # Install homebrew if it isn't already installed
 if ! hash brew 2> /dev/null; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 brew tap caskroom/fonts

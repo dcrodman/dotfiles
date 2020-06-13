@@ -3,25 +3,30 @@
 # Convenience script for running the appropriate setups depending on the target platform
 # and handling a few other installation steps.
 
+[ "$UID" -eq 0 ] || exec sudo "$0" "$@"
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 unamestr=`uname`
 
 if [[ $unamestr == "Darwin" ]]; then
 	bash $DIR/brew.sh
 	bash $DIR/osx.sh
-else; then
+else
 	bash $DIR/linux.sh
 fi
+
+
+source ~/.zshrc
 
 ### Python (pyenv)
 pyenv install 3.7.3
 pyenv global 3.7.3
 pip install --upgrade pip
+pip install --user poetry
 
-### Go (gvm)
+# Gvm setup.
 zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-gvm install go1.4
-gvm use go1.4
-export GOROOT_BOOTSTRAP=$GOROOT
-gvm install go1.14.4
-go use go.1.14.4 --default
+
+source /Users/dcrodman/.gvm/scripts/gvm
+
+gvm install go1.14.4 --binary
