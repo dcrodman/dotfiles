@@ -8,6 +8,7 @@ fi
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
+brew install pet
 brew install tmux
 # Needed for tmux config.
 brew install reattach-to-user-namespace
