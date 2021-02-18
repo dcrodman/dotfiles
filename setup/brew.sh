@@ -16,7 +16,7 @@ brew install reattach-to-user-namespace
 
 brew install zsh bash-completion
 brew install httpie wget
-brew install aspell
+brew install tldr
 
 brew install git
 brew install vim

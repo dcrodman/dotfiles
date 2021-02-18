@@ -7,7 +7,6 @@
 - link:
     ~/.dotfiles: .
     ~/.zshrc: home/zshrc
-    ~/.zshenv: home/zshenv
     ~/.vimrc: home/vimrc
     ~/.gitignore: home/gitignore
     ~/.gitconfig: home/gitconfig
@@ -16,3 +15,4 @@
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.antigen_lnk: antigen
+    ~/.tldr: tldr

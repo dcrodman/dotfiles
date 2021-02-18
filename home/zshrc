@@ -111,6 +111,11 @@ if [ `command -v starship` ]; then
     eval "$(starship init zsh)"	
 fi
 
+# tldr
+if [ `command -v tldr` ]; then
+    source ~/.tldr/autocomplete.sh
+fi
+
 ########## Load dotfiles_local zsh configs #########
 
 # Source a local zshrc if it exists.
