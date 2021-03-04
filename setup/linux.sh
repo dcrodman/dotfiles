@@ -11,4 +11,6 @@ sudo apt-get install postgresql
 sudo apt-get install python
 curl https://pyenv.run | bash
 
+curl -fsSL https://starship.rs/install.sh | bash
+
 chsh -s /bin/zsh
