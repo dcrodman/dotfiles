@@ -78,19 +78,17 @@ fi
 
 ############## Functions ################
 
-init-nvm() {
-    if [ -d $HOME/.nvm ]; then
-        export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-        [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-    fi
-}
 
 ############# Setup Scripts #############
 
-# gvm
-if [ -d $HOME/.gvm ]; then
-    source $HOME/.gvm/scripts/gvm
+# Starship
+if [ `command -v starship` ]; then
+    eval "$(starship init zsh)"
+fi
+
+# tldr
+if [ `command -v tldr` ]; then
+    source ~/.tldr/autocomplete.sh
 fi
 
 # pyenv
@@ -103,17 +101,16 @@ if [ `command -v rbenv` ]; then
     eval "$(rbenv init -)"
 fi
 
-# Nvm
-# See init-nvm
-
-# Starship
-if [ `command -v starship` ]; then
-    eval "$(starship init zsh)"	
+# gvm
+if [ -d $HOME/.gvm ]; then
+    source $HOME/.gvm/scripts/gvm
 fi
 
-# tldr
-if [ `command -v tldr` ]; then
-    source ~/.tldr/autocomplete.sh
+# Nvm
+if [ -d $HOME/.nvm ]; then
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 ########## Load dotfiles_local zsh configs #########
