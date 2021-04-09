@@ -8,15 +8,15 @@ fi
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
-brew install pet
+brew install knqyf263/pet/pet
 brew install ripgrep
+brew install tldr
 brew install tmux
 # Needed for tmux config.
 brew install reattach-to-user-namespace
 
 brew install zsh bash-completion
 brew install httpie wget
-brew install tldr
 
 brew install git
 brew install vim
