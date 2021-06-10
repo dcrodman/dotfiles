@@ -55,22 +55,25 @@ fi
 ########## $PATH modifications ##########
 
 # Path definitions are here so that OSX's path_helper doesn't ruin things.
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-
-export PATH=${PATH}:/opt/X11/include:/opt/X11/bin
+export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
 
 # macOS only
 if [[ `uname` == 'Darwin' ]]; then
 	# Include VSCode binaries on path if we have it installed.
     if [ -e /Applications/Visual\ Studio\ Code.app ]; then
-        export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:${PATH}
+        export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
     fi
 
     # Include the Postgres binaries from the latest version of Postgres installed throug
     # Postgres.app. Prevents some inconsistencies with the Homebrew-installed tools.
     if [ -e /Applications/Postgres.app ]; then
-        export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:${PATH}
+        export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     fi
+fi
+
+# Go
+if [ -d /usr/local/go ]; then
+    export PATH=$PATH:/usr/local/go/bin
 fi
 
 ######## Miscallaneous Env Vars #########
