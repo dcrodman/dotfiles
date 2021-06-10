@@ -24,10 +24,5 @@ pyenv global 3.7.3
 pip install --upgrade pip
 pip install --user poetry
 
-# Go (gvm)
-zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-source /Users/dcrodman/.gvm/scripts/gvm
-gvm install go1.14.4 --binary
-
 # Node (nvm)
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
