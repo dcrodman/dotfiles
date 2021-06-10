@@ -7,6 +7,7 @@
 - link:
     ~/.dotfiles: .
     ~/.zshrc: home/zshrc
+    ~/.zprofile: home/zprofile
     ~/.vimrc: home/vimrc
     ~/.gitignore: home/gitignore
     ~/.gitconfig: home/gitconfig
