@@ -95,7 +95,7 @@ if [ `command -v tldr` ]; then
 fi
 
 # pyenv
-if [ `command -v pyenv` ]; then
+if [ -d $HOME/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
