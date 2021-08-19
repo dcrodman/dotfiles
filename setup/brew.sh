@@ -8,22 +8,24 @@ fi
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
-brew install knqyf263/pet/pet
-brew install ripgrep
-brew install tldr
-brew install tmux
-# Needed for tmux config.
-brew install reattach-to-user-namespace
+brew install zsh \
+    # Environment & shell.
+    starship \
+    bash-completion \
+    tmux \
+    # (needed for tmux config)
+    reattach-to-user-namespace \
+    # Tools.
+    httpie \
+    wget \
+    knqyf263/pet/pet \
+    ripgrep \
+    tldr \
+    # Development stuff.
+    git \
+    vim \
+    pyenv \
 
-brew install zsh bash-completion
-brew install httpie wget
-
-brew install git
-brew install vim
-
-brew install pyenv
-
-brew install starship
 
 # Remove outdated versions from the Cellar
 brew cleanup
