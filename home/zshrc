@@ -64,11 +64,16 @@ if [[ `uname` == 'Darwin' ]]; then
         export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
     fi
 
-    # Include the Postgres binaries from the latest version of Postgres installed throug
+    # Include the Postgres binaries from the latest version of Postgres installed through
     # Postgres.app. Prevents some inconsistencies with the Homebrew-installed tools.
     if [ -e /Applications/Postgres.app ]; then
         export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     fi
+fi
+
+# Homebrew path on M1 macs.
+if [[ -d /opt/homebrew ]]; then
+    export PATH=$PATH:/opt/homebrew/bin
 fi
 
 # Go
