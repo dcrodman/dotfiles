@@ -13,12 +13,10 @@ antigen use oh-my-zsh
 # Plugins
 antigen bundle brew
 antigen bundle git
-antigen bundle sublime
 antigen bundle python
 antigen bundle ruby
 antigen bundle golang
 antigen bundle encode64
-antigen bundle httpie
 
 # Theme
 # antigen theme geoffgarside
@@ -54,8 +52,13 @@ fi
 
 ########## $PATH modifications ##########
 
+# Homebrew path on M1 macs.
+if [[ -d /opt/homebrew ]]; then
+    export PATH=/opt/homebrew/bin:$PATH
+fi
+
 # Path definitions are here so that OSX's path_helper doesn't ruin things.
-export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
+# export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
 
 # macOS only
 if [[ `uname` == 'Darwin' ]]; then
@@ -69,11 +72,6 @@ if [[ `uname` == 'Darwin' ]]; then
     if [ -e /Applications/Postgres.app ]; then
         export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     fi
-fi
-
-# Homebrew path on M1 macs.
-if [[ -d /opt/homebrew ]]; then
-    export PATH=$PATH:/opt/homebrew/bin
 fi
 
 # Go
@@ -92,16 +90,6 @@ fi
 # Starship
 if [ `command -v starship` ]; then
     eval "$(starship init zsh)"
-fi
-
-# tldr
-if [ `command -v tldr` ]; then
-    source ~/.tldr/autocomplete.sh
-fi
-
-# pyenv
-if [ -d $HOME/.pyenv ]; then
-    eval "$(pyenv init -)"
 fi
 
 # rbenv
