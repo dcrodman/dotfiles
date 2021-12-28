@@ -13,9 +13,9 @@ brew install zsh starship bash-completion tmux
 # (needed for tmux config)
 brew install reattach-to-user-namespace
 # Tools.
-brew install wget knqyf263/pet/pet ripgrep tldr
+brew install wget knqyf263/pet/pet ripgrep tldr nmap netcat
 # Development stuff.
-brew install git vim pyenv go
+brew install git vim pyenv nvm go
 
 # Remove outdated versions from the Cellar
 brew cleanup
