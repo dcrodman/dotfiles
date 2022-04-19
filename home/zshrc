@@ -58,7 +58,7 @@ if [[ -d /opt/homebrew ]]; then
 fi
 
 # Path definitions are here so that OSX's path_helper doesn't ruin things.
-# export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
+export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
 
 # macOS only
 if [[ `uname` == 'Darwin' ]]; then
