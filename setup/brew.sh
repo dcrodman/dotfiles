@@ -19,11 +19,14 @@ brew install zsh \
     wget \
     knqyf263/pet/pet \
     ripgrep \
+    nmap \
+    jq \
     # Development stuff.
     git \
     vim \
     pyenv \
-    rbenv
+    rbenv \
+    go
 
 
 # Remove outdated versions from the Cellar

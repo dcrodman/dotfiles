@@ -17,25 +17,18 @@ Extra Steps
 ============
 
 There are some other things you'll need to do in order to get this fully functional:
-Open tmux and run
+1. Run `chmod +x setup/setup.sh && setup/setup.sh`
+1. Generate or copy SSH keys
+1. Open tmux and run
 
     Ctrl+a + I
 
-Run one or more of the scripts in `setup/`: 
-
-    # OSX
-    setup/osx.sh
-    setup/brew.sh
-
-Open vim and run
+1. Open vim and run
 
     :PluginInstall
 
-Install pyenv versions
-
-    pyenv install 3.7.0
-
-Generate or copy SSH keys
+1. Install pyenv versions
+1. Install Cobalt2 iterm font https://github.com/wesbos/Cobalt2-iterm
 
 Troubleshooting
 ============
