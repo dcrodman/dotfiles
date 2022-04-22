@@ -30,6 +30,12 @@ execute() {
     fi
 }
 
+answer_is_yes() {
+    [[ "$REPLY" =~ ^[Yy]$ ]] \
+        && return 0 \
+        || return 1
+}
+
 ask_for_confirmation() {
     printf "\e[0;33m  [?] $1 (y/n)\e[0m"
     read -n 1
