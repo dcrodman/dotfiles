@@ -64,6 +64,12 @@ symlink_files() {
     done
 }
 
+osx_defaults() {
+    if [[ `uname` == "Darwin" ]]; then
+        source $(pwd)/init/osx.sh
+    fi
+}
+
 install_packages() {
     if [[ `uname` == "Darwin" ]]; then
         if [ `command -v brew` ]; then
@@ -128,10 +134,10 @@ setup_tmux() {
 }
 
 symlink_files
-# Change the system default shell to zsh
-
+osx_defaults
 install_packages
 setup_vim
 setup_tmux
 
+# Change the system default shell to zsh
 chsh -s `which zsh`

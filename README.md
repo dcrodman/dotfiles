@@ -26,7 +26,7 @@ There are some other things you'll need to do in order to get this fully functio
     Ctrl+a + I
 
 1. Install pyenv versions
-1. Install Cobalt2 iterm font https://github.com/wesbos/Cobalt2-iterm
+1. Nab the stuff from prefs and put those in the right places.
 
 Troubleshooting
 ============
