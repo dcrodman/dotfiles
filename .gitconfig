@@ -32,7 +32,7 @@
 [core]
     excludesfile = ~/.gitignore
     ignorecase = false
-    editor = /usr/local/bin/vim
+    editor = vim
 
 [include]
     path = ~/.gitconfig_local

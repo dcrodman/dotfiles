@@ -6,7 +6,7 @@ export CLICOLOR=1
 
 ################ Antigen ################
 
-source ~/.antigen_lnk/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -14,9 +14,7 @@ antigen use oh-my-zsh
 antigen bundle brew
 antigen bundle git
 antigen bundle python
-antigen bundle ruby
 antigen bundle golang
-antigen bundle encode64
 
 # Theme
 # antigen theme geoffgarside
@@ -24,31 +22,6 @@ antigen bundle encode64
 # antigen theme af-magic
 
 antigen apply
-
-################ Aliases ################
-
-if [[ `uname` == 'Darwin' ]]; then
-    alias mysqlstart='mysql.server start'
-    alias mysqlstop='mysql.server stop'
-fi
-
-# Tmux commands.
-alias tn='tmux new'
-alias tnd='tmux new -s dev'
-alias ta='tmux attach #'
-alias tad='tmux attach -t dev'
-
-# Redis.
-alias start-redis='redis-server /usr/local/etc/redis.conf'
-
-############### Functions ###############
-
-if [[ `uname` == 'Darwin' ]]; then
-    # Pass true to enable alternate characters or false to enable repeating keys.
-    altcharacters() {
-        defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool $1
-    }
-fi
 
 ########## $PATH modifications ##########
 
@@ -82,7 +55,24 @@ fi
 ######## Miscallaneous Env Vars #########
 
 
-############## Functions ################
+
+################ Aliases ################
+
+if [[ `uname` == 'Darwin' ]]; then
+    alias mysqlstart='mysql.server start'
+    alias mysqlstop='mysql.server stop'
+fi
+
+# Tmux commands.
+alias tn='tmux new'
+alias tnd='tmux new -s dev'
+alias ta='tmux attach #'
+alias tad='tmux attach -t dev'
+
+# Redis.
+alias start-redis='redis-server /usr/local/etc/redis.conf'
+
+############### Functions ###############
 
 
 ############# Setup Scripts #############
@@ -97,6 +87,7 @@ if [ `command -v rbenv` ]; then
     eval "$(rbenv init -)"
 fi
 
+# pyenv
 eval "$(pyenv init -)"
 
 # Nvm
@@ -104,6 +95,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ########## Load dotfiles_local zsh configs #########
