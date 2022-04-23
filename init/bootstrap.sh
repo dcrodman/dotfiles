@@ -30,16 +30,17 @@ execute() {
     fi
 }
 
-answer_is_yes() {
-    [[ "$REPLY" =~ ^[Yy]$ ]] \
-        && return 0 \
-        || return 1
-}
-
 ask_for_confirmation() {
     printf "\e[0;33m  [?] $1 (y/n)\e[0m"
-    read -n 1
-    printf "\n"
+    read -rs -k 1 reply
+    case "${reply}" in
+    y|Y|$'\n')
+        return 0
+        ;;
+    *)
+        return 1
+        ;;
+    esac
 }
 
 # Link all of the files in the base directory into $HOME.
@@ -54,8 +55,7 @@ symlink_files() {
 
         if [ -e "$targetFile" ]; then
             if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
-                ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
-                if answer_is_yes; then
+                if ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"; then
                     rm -rf "$targetFile"
                     execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
                 else
