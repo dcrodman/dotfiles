@@ -47,11 +47,31 @@ ask_for_confirmation() {
 symlink_files() {
     declare -a FILES_TO_SYMLINK
     FILES_TO_SYMLINK=($(find . -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|' | sort))
-    FILES_TO_SYMLINK+=(".tldr")
+    declare -a DIRS_CONTENTS_ONLY
+    DIRS_CONTENTS_ONLY=()
 
+    # Symlink only the contents of these directories, not the directories themselves.
+    for d in ${DIRS_CONTENTS_ONLY[@]}; do
+        targetDir="$HOME/$(printf "%s" "$d" | sed "s/.*\/\(.*\)/\1/g")"
+        if [[ ! -d "$targetDir" ]]; then
+            mkdir $targetDir
+        fi
+
+        files=($(find $d -maxdepth 1 -not -name $d -not -name .DS_Store))
+        for f in ${files[@]}; do
+            FILES_TO_SYMLINK+=($f)
+        done
+    done
+
+    # Symlink the rest of the files.
     for i in ${FILES_TO_SYMLINK[@]}; do
+        # Skip over any directories in DIRS_CONTENTS_ONLY, else we'd symlink them anyway.
+        if [[ " ${DIRS_CONTENTS_ONLY[*]} " =~ " ${i} " ]]; then
+            continue
+        fi
+
         sourceFile="$(pwd)/$i"
-        targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+        targetFile="$HOME/$(printf "%s" "$i")"
 
         if [ -e "$targetFile" ]; then
             if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
