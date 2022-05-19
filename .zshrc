@@ -1,43 +1,42 @@
-############  General Settings ############
+############  Shell Settings ############
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zhistory
 export CLICOLOR=1
 
-################ Antigen ################
-
+# Antigen
 source /opt/homebrew/share/antigen/antigen.zsh
-
 antigen use oh-my-zsh
-
 # Plugins
 antigen bundle brew
 antigen bundle git
 antigen bundle python
 antigen bundle golang
-
-# Theme
 # antigen theme geoffgarside
 # antigen theme bhilburn/powerlevel9k powerlevel9k
 # antigen theme af-magic
-
 antigen apply
 
 ########## $PATH modifications ##########
 
-# Homebrew path on M1 macs.
-if [[ -d /opt/homebrew ]]; then
-    export PATH=/opt/homebrew/bin:$PATH
-fi
-
-# Path definitions are here so that OSX's path_helper doesn't ruin things.
-export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
-
 # macOS only
 if [[ `uname` == 'Darwin' ]]; then
+    # Homebrew path on M1 macs.
+    if [[ -d /opt/homebrew ]]; then
+        export PATH=/opt/homebrew/bin:$PATH
+    fi
+
+    # Path definitions are here so that OSX's path_helper doesn't ruin things.
+    export PATH=$PATH:/usr/local/bin:/opt/X11/include:/opt/X11/bin
+
 	# Include VSCode binaries on path if we have it installed.
     if [ -e /Applications/Visual\ Studio\ Code.app ]; then
         export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+    fi
+
+    # Sublime Text
+    if [ -e /Applications/Sublime\ Text.app/Contents/SharedSupport/bin ]; then
+        export PATH=$PATH:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
     fi
 
     # Include the Postgres binaries from the latest version of Postgres installed through
@@ -53,7 +52,6 @@ if [ -d /usr/local/go ]; then
 fi
 
 ######## Miscallaneous Env Vars #########
-
 
 
 ################ Aliases ################
@@ -98,9 +96,7 @@ export NVM_DIR="$HOME/.nvm"
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-########## Load dotfiles_local zsh configs #########
-
-# Source a local zshrc if it exists.
+#### Source a local zshrc if it exists for environment-specific configs.
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
