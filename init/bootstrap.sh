@@ -123,7 +123,8 @@ install_packages() {
             vim \
             pyenv \
             rbenv \
-            go
+            go \
+            protobuf
     else
         sudo apt-get install \
             zsh \
