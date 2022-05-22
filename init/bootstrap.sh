@@ -33,6 +33,7 @@ execute() {
 ask_for_confirmation() {
     printf "\e[0;33m  [?] $1 (y/n)\e[0m"
     read -rs -k 1 reply
+    echo
     case "${reply}" in
     y|Y|$'\n')
         return 0
@@ -46,7 +47,7 @@ ask_for_confirmation() {
 # Link all of the files in the base directory into $HOME.
 symlink_files() {
     declare -a FILES_TO_SYMLINK
-    FILES_TO_SYMLINK=($(find . -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|' | sort))
+    FILES_TO_SYMLINK=($(find . -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .vscode -not -name . | sed -e 's|//|/|' | sed -e 's|./.|.|' | sort))
     declare -a DIRS_CONTENTS_ONLY
     DIRS_CONTENTS_ONLY=()
 
