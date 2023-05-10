@@ -169,7 +169,7 @@ setup_tmux() {
 }
 
 symlink_files
-# osx_defaults
+osx_defaults
 install_packages
 setup_zsh
 setup_vim
