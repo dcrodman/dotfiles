@@ -141,6 +141,13 @@ install_packages() {
     fi
 }
 
+setup_zsh() {
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+    # Change the system default shell to zsh
+    chsh -s `which zsh`
+}
+
 setup_vim() {
     if [ -d "$HOME/.vim" ]; then
         print_success "~/.vim already exists (skipping)"
@@ -162,10 +169,8 @@ setup_tmux() {
 }
 
 symlink_files
-osx_defaults
+# osx_defaults
 install_packages
+setup_zsh
 setup_vim
 setup_tmux
-
-# Change the system default shell to zsh
-chsh -s `which zsh`
