@@ -176,7 +176,7 @@ zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_ed25519'
 
 #
 # Syntax Highlighting
@@ -238,7 +238,10 @@ zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 # Utility
 #
 
+# Disable spell correction.
+zstyle ':prezto:module:utility' correct 'no'
+
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-# zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:module:utility' safe-ops 'no'
