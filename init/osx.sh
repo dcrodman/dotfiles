@@ -121,11 +121,11 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 3
+# Set a blazingly fast keyboard repeat rate (normal minimum is 2 (30 ms)).
+defaults write -g KeyRepeat -int 1
 
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Set a blazingly fast keyboard repeat rate (normal minimum is 15 (225 ms)).
+defaults write -g InitialKeyRepeat -int 10
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 # sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
