@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 # ~/.osx — https://mths.be/osx
+# https://gist.github.com/brorbw/068a9a63610cdb95af96f5100d0e713f
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
@@ -12,18 +17,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-#sudo scutil --set ComputerName "0x6D746873"
-#sudo scutil --set HostName "0x6D746873"
-#sudo scutil --set LocalHostName "0x6D746873"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
-
 # Always show scrollbars
 # defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
-
-# Increase window resize speed for Cocoa applications
-# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -36,9 +32,6 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
@@ -49,54 +42,11 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 # Disable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
-# Set Help Viewer windows to non-floating mode
-# defaults write com.apple.helpviewer DevMode -bool true
-
-# Fix for the ancient UTF-8 bug in QuickLook (https://mths.be/bbo)
-# Commented out, as this is known to cause problems in various Adobe apps :(
-# See https://github.com/mathiasbynens/dotfiles/issues/237
-#echo "0x08000100:0" > ~/.CFUserTextEncoding
-
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
-# Check for software updates daily, not just once per week
-# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-# Disable Notification Center and remove the menu bar icon
-# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
-# all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-#rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-#sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-#sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
-
-###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
-
-# Disable local Time Machine snapshots
-sudo tmutil disablelocal
-
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-sudo rm /Private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /Private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /Private/var/vm/sleepimage
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -127,9 +77,6 @@ defaults write -g KeyRepeat -int 1
 # Set a blazingly fast keyboard repeat rate (normal minimum is 15 (225 ms)).
 defaults write -g InitialKeyRepeat -int 10
 
-# Set the timezone; see `sudo systemsetup -listtimezones` for other values
-# sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
-
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
@@ -148,28 +95,11 @@ defaults write NSQuitAlwaysKeepsWindows -int 1
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
-# Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
-
-# Enable HiDPI display modes (requires restart)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+defaults write com.apple.screencapture type -string "png"s
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
-
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-# defaults write com.apple.finder QuitMenuItem -bool true
-
-# Finder: disable window animations and Get Info animations
-# defaults write com.apple.finder DisableAllAnimations -bool true
-
-# Set Desktop as the default location for new Finder windows
-# For other paths, use `PfLo` and `file:///full/path/here/`
-# defaults write com.apple.finder NewWindowTarget -string "PfDe"
-# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -464,71 +394,6 @@ sudo mdutil -i on / > /dev/null
 sudo mdutil -E / > /dev/null
 
 ###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
-
-# Use a modified version of the Solarized Dark theme by default in Terminal.app
-# osascript <<EOD
-
-# tell application "Terminal"
-
-# 	local allOpenedWindows
-# 	local initialOpenedWindows
-# 	local windowID
-# 	set themeName to "Solarized Dark xterm-256color"
-
-# 	(* Store the IDs of all the open terminal windows. *)
-# 	set initialOpenedWindows to id of every window
-
-# 	(* Open the custom theme so that it gets added to the list
-# 	   of available terminal themes (note: this will open two
-# 	   additional terminal windows). *)
-# 	do shell script "open '$HOME/init/" & themeName & ".terminal'"
-
-# 	(* Wait a little bit to ensure that the custom theme is added. *)
-# 	delay 1
-
-# 	(* Set the custom theme as the default terminal theme. *)
-# 	set default settings to settings set themeName
-
-# 	(* Get the IDs of all the currently opened terminal windows. *)
-# 	set allOpenedWindows to id of every window
-
-# 	repeat with windowID in allOpenedWindows
-
-# 		(* Close the additional windows that were opened in order
-# 		   to add the custom theme to the list of terminal themes. *)
-# 		if initialOpenedWindows does not contain windowID then
-# 			close (every window whose id is windowID)
-
-# 		(* Change the theme for the initial opened terminal windows
-# 		   to remove the need to close them in order for the custom
-# 		   theme to be applied. *)
-# 		else
-# 			set current settings of tabs of (every window whose id is windowID) to settings set themeName
-# 		end if
-
-# 	end repeat
-
-# end tell
-
-# EOD
-
-# Enable “focus follows mouse” for Terminal.app and all X11 apps
-# i.e. hover over a window and start typing in it without clicking first
-#defaults write com.apple.terminal FocusFollowsMouse -bool true
-#defaults write org.x.X11 wm_ffm -bool true
-
-# Install the Solarized Dark theme for iTerm
-# open "${HOME}/init/Solarized Dark.itermcolors"
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
-###############################################################################
 # Time Machine                                                                #
 ###############################################################################
 
@@ -571,16 +436,6 @@ defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ###############################################################################
-# Mac App Store                                                               #
-###############################################################################
-
-# Enable the WebKit Developer Tools in the Mac App Store
-# defaults write com.apple.appstore WebKitDeveloperExtras -bool true
- 
-# Enable Debug Menu in the Mac App Store
-# defaults write com.apple.appstore ShowDebugMenu -bool true
-
-###############################################################################
 # Messages                                                                    #
 ###############################################################################
 
@@ -594,44 +449,12 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
-###############################################################################
-
-# Allow installing user scripts via GitHub Gist or Userscripts.org
-defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-
-# Disable the all too sensitive backswipe on trackpads
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
-
-# Disable the all too sensitive backswipe on Magic Mouse
-defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
-
-# Use the system-native print preview dialog
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
-# Expand the print dialog by default
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-###############################################################################
-# Sublime Text                                                                #
-###############################################################################
-
-# Install Sublime Text settings
-cp -r Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
-
-###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Twitter" "iCal"; do
+	"Dock" "Finder" "Messages" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+	"Transmission" "iCal"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
